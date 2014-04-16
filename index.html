@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>gitbrowse</title>
+      <link rel="stylesheet" href="style.css" type="text/css" />
+      <link rel="stylesheet" href="github.css" type="text/css" />
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/async/1.22/async.min.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+      <script src="git-browse.js"></script>
+      <script>
+         $(document).ready(function() {
+            $.gitBrowse.init({
+               user: 'caipre',
+               repo: 'git-browse',
+            });
+         });
+      </script>
+   </head>
+
+   <body>
+      <div>
+         <ul id="parents"></ul>
+      </div>
+      <div id="commit">
+         <h2 id="message">
+            Loading repository data...
+         </h2>
+         <hr />
+         <div id="files">
+         </div>
+      </div>
+      <div>
+         <ul id="children"></ul>
+      </div>
+   </body>
+</html>

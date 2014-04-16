@@ -1,0 +1,81 @@
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   font-size: inherit;
+   margin: 0;
+   padding: 0;
+}
+
+html,
+body {
+   height: 100%;
+   min-height: 100%;
+}
+
+body {
+   background-color: hsl(0, 0%, 99%);
+   color: hsl(0, 0%, 20%);
+   font: 1.2em/1.1em sans-serif;
+   width: 100%;
+}
+
+body > div {
+   float: left;
+   padding: 2em;
+   width: 22%;
+}
+
+ul#parents li,
+ul#children li {
+   list-style-type: none;
+   margin-bottom: 1em;
+   padding: 0.2em;
+}
+
+ul#parents li:before {
+   content: "\00AB";
+   padding-right: 0.5em;
+}
+
+ul#children li:after {
+   content: "\00BB";
+   padding-left: 0.5em;
+}
+
+a:link,
+a:visited {
+   color: hsl(0, 0%, 60%);
+   text-decoration: none;
+}
+
+a:hover,
+a:active {
+   color: hsl(200, 50%, 50%);
+}
+
+div#commit {
+   width: 56%;
+}
+
+hr {
+   background-color: hsl(0, 0%, 80%);
+   border: 0;
+   height: 1px;
+   margin: 1.5em 0;
+   width: 100%;
+}
+
+div.file {
+   font-family: monospace;
+   margin-top: 5em;
+}
+
+div.file span.filename {
+   border-left: 2px solid hsl(0, 0%, 80%);
+   padding-left: 1em;
+}
+
+div.file pre {
+   margin-top: 1em;
+}
