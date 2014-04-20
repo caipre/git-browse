@@ -54,6 +54,13 @@ a:active {
    color: hsl(200, 50%, 50%);
 }
 
+input[type='submit'] {
+   border: 0;
+   border-radius: 3px;
+   padding: 2px 5px;
+   background-color: hsl(200, 50%, 80%);
+}
+
 div#commit {
    width: 56%;
 }
@@ -78,4 +85,5 @@ div.file span.filename {
 
 div.file pre {
    margin-top: 1em;
+   white-space: pre-wrap;
 }

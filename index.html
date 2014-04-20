@@ -4,16 +4,24 @@
       <meta charset="utf-8">
       <title>gitbrowse</title>
       <link rel="stylesheet" href="style.css" type="text/css" />
-      <link rel="stylesheet" href="github.css" type="text/css" />
+      <link rel="stylesheet" href="syntax.css" type="text/css" />
       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/async/1.22/async.min.js"></script>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
       <script src="git-browse.js"></script>
       <script>
          $(document).ready(function() {
-            $.gitBrowse.init({
-               user: 'caipre',
-               repo: 'git-browse',
+            $('form[name="git-browse"]').on('submit', function() {
+               user = $('#user').val();
+               repo = $('#repo').val();
+               $('#message').empty().text('Loading repository...');
+
+               $.gitBrowse.init({
+                  user: user,
+                  repo: repo,
+               });
+
+               return false;
             });
          });
       </script>
@@ -25,7 +33,11 @@
       </div>
       <div id="commit">
          <h2 id="message">
-            Loading repository data...
+            <form name="git-browse">
+               <input type="text" autofocus="autofocus" id="user" placeholder="username" />
+               <input type="text" id="repo" placeholder="repository" />
+               <input type="submit" value="Go" />
+            </form>
          </h2>
          <hr />
          <div id="files">

@@ -102,6 +102,7 @@
          if (seen_initial_commit) {
             callback(null, $.gitBrowse.initial);
          } else {
+            $('#message').text('Loading repository... read ' + Object.keys($.gitBrowse.commits).length + ' commits');
             $.gitBrowse.fetch(commits[commits.length - 1].sha, callback);
          }
       },
